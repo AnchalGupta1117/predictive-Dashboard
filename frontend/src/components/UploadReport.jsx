@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import styles from '../styles/UploadReport.module.css';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const UploadReport = ({ onAnalysisComplete }) => {
   const fileInput = useRef();
   const [fileName, setFileName] = useState('');
@@ -26,7 +28,7 @@ const UploadReport = ({ onAnalysisComplete }) => {
 
     // ✅ Reset backend prediction file
     try {
-      await fetch('http://localhost:5000/reset', { method: 'POST' });
+      await fetch(`${BACKEND_URL}/reset`, { method: 'POST' });
     } catch (err) {
       console.warn('Could not reset backend state:', err);
     }
@@ -35,7 +37,7 @@ const UploadReport = ({ onAnalysisComplete }) => {
     formData.append('file', fileSelected);
 
     try {
-      const response = await fetch('http://localhost:5000/predict', {
+      const response = await fetch(`${BACKEND_URL}/predict`, {
         method: 'POST',
         body: formData,
       });
@@ -43,7 +45,7 @@ const UploadReport = ({ onAnalysisComplete }) => {
       const result = await response.json();
 
       if (response.ok) {
-        const fileUrl = `http://localhost:5000${result.download_url}`;
+        const fileUrl = `${BACKEND_URL}${result.download_url}`;
         setReportUrl(fileUrl);
 
         // ✅ Save summary (for FaultSummary)

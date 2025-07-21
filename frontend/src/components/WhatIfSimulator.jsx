@@ -73,7 +73,8 @@ ${row.join(',')}`;
     const formData = new FormData();
     formData.append('file', blob, 'simulator.csv');
     try {
-      const response = await fetch('http://localhost:5000/predict_simulator', {
+      const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+      const response = await fetch(`${BACKEND_URL}/predict_simulator`, {
         method: 'POST',
         body: formData,
       });

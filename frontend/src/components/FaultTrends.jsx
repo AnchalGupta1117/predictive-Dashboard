@@ -16,6 +16,8 @@ import { LuDownload } from "react-icons/lu";
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
 const FaultTrend = () => {
   const [rawData, setRawData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -51,7 +53,7 @@ const FaultTrend = () => {
 
   // useEffect: Fetch data and set calendar to min/max timestamp from input file
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/get_trend_data")
+    axios.get(`${BACKEND_URL}/get_trend_data`)
       .then((res) => {
         const data = res.data?.trend_data || [];
         const parsed = data.map(d => ({
