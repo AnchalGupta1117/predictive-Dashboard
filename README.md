@@ -16,7 +16,6 @@ A comprehensive web-based predictive maintenance system that uses machine learni
 - [API Endpoints](#-api-endpoints)
 - [Project Structure](#-project-structure)
 - [Contributing](#-contributing)
-- [License](#-license)
 
 ## ✨ Features
 
@@ -209,28 +208,7 @@ predictive-dashboard/
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Development Guidelines
-- Follow React best practices for frontend development
-- Use Python PEP 8 style guide for backend code
-- Add comprehensive tests for new features
-- Update documentation for any API changes
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **XGBoost** for powerful gradient boosting algorithms
-- **React Team** for the amazing frontend framework
-- **Flask Community** for the lightweight web framework
-- **Recharts** for beautiful data visualizations
-
-## 📞 Support
-
-If you have any questions or need support:
-- Create an issue on GitHub
-- Contact: [Your Email]
 - Project URL: https://github.com/AnchalGupta1117/predictive-Dashboard
 
 ---
