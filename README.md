@@ -209,8 +209,8 @@ predictive-dashboard/
 5. Open a Pull Request
 
 
-- Project URL: https://github.com/AnchalGupta1117/predictive-Dashboard
-
+- Project Github URL: https://github.com/AnchalGupta1117/predictive-Dashboard
+- Project URL: https://predictive-dashboard-wpfl.vercel.app/ 
 ---
 
 ⭐ **Star this repository if you find it helpful!** 
